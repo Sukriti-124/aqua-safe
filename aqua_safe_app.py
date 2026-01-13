@@ -53,7 +53,14 @@ st.subheader("Feature Importance (SHAP)")
 explainer = shap.TreeExplainer(stacking_clf)
 shap_values = explainer.shap_values(input_df)
 
-vals = np.abs(shap_values[1][0])
+if isinstance(shap_values, list):
+    shap_vals = shap_values[1][0]   
+else:
+    shap_vals = shap_values[0]
+
+# Plot
+vals = np.abs(shap_vals)
+
 fig, ax = plt.subplots()
 ax.barh(input_df.columns, vals)
 ax.set_xlabel("SHAP value (impact)")

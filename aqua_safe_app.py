@@ -53,8 +53,8 @@ st.subheader("Feature Importance (SHAP)")
 explainer = shap.TreeExplainer(stacking_clf)
 shap_values = explainer.shap_values(input_df)
 
-fig, ax = plt.subplots()
-shap.summary_plot(shap_values, input_df, plot_type="bar", show=False)
+fig, ax = plt.subplots(figsize=(8, 4))
+shap.plots.waterfall(shap_values[0], show=False)
 st.pyplot(fig)
 
 

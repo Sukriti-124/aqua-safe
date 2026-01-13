@@ -50,8 +50,8 @@ st.write(f"Probability of Potability: {y_proba[0]*100:.2f}%")
 
 st.subheader("Feature Importance (SHAP)")
 
-explainer = shap.Explainer(stacking_clf.final_estimator_, input_df)
-shap_values = explainer(input_df)
+explainer = shap.TreeExplainer(stacking_clf)
+shap_values = explainer.shap_values(input_df)
 
 fig, ax = plt.subplots()
 shap.summary_plot(shap_values, input_df, plot_type="bar", show=False)

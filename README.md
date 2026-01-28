@@ -1,4 +1,4 @@
-# Aqua-Safe: Water Probability Classification
+# Aqua-Safe: Water Potability Classification
 
 An interactive machine learning application that predicts whether a water sample is **Drinkable (potable)** or **Not Drinkable** based on its physicochemical properties.
 

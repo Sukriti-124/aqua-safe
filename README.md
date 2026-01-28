@@ -48,11 +48,11 @@ Best Model: Random Forest Classifier
   - F1-score: 0.41
 
 ## 🛠️ Project Files
-├── aqua_safe.ipynb # Main analysis and model training notebook
-├── aqua_safe_app.py # Streamlit application for prediction
-├── aqua_safe_model.pkl # Trained classification model
-├── requirements.txt # Python dependencies
-└── README.md # Project overview and instructions
+── aqua_safe.ipynb # Main analysis and model training notebook
+── aqua_safe_app.py # Streamlit application for prediction
+── aqua_safe_model.pkl # Trained classification model
+── requirements.txt # Python dependencies
+── README.md # Project overview and instructions
 
 ## 🧰 Tech Stack
 Python, Pandas, NumPy, Scikit-learn, Matplotlib/Seaborn, Streamlit, Jupyter Notebook, Google Colab

@@ -6,8 +6,17 @@ import shap
 import matplotlib.pyplot as plt
 
 stacking_clf = joblib.load("aqua_safe_model.pkl")
-
-st.title("Aqua-Safe: Water Potability Predictor")
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background: linear-gradient(to bottom, #f0f8ff, #a2d2ff);
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+st.title("Aqua-Safe: Water Potability Classification")
 st.markdown("""
 Predict whether water is **Potable** or **Not Potable** based on water quality parameters.
 """)
@@ -15,13 +24,13 @@ Predict whether water is **Potable** or **Not Potable** based on water quality p
 def user_input_features():
     ph = st.number_input("pH", 0.0, 14.0, 7.0)
     hardness = st.number_input("Hardness", 0.0, 1000.0, 200.0)
-    solids = st.number_input("Solids", 0.0, 100000.0, 20000.0)
-    chloramines = st.number_input("Chloramines", 0.0, 20.0, 7.0)
-    sulfate = st.number_input("Sulfate", 0.0, 500.0, 300.0)
-    conductivity = st.number_input("Conductivity", 0.0, 2000.0, 500.0)
-    organic_carbon = st.number_input("Organic Carbon", 0.0, 50.0, 15.0)
-    trihalomethanes = st.number_input("Trihalomethanes", 0.0, 200.0, 100.0)
-    turbidity = st.number_input("Turbidity", 0.0, 10.0, 3.0)
+    solids = st.number_input("Solids", 0.0, 100000.0, 500.0)
+    chloramines = st.number_input("Chloramines", 0.0, 20.0, 4.0)
+    sulfate = st.number_input("Sulfate", 0.0, 1000.0, 30.0)
+    conductivity = st.number_input("Conductivity", 0.0, 2000.0, 400.0)
+    organic_carbon = st.number_input("Organic Carbon", 0.0, 50.0, 2.0)
+    trihalomethanes = st.number_input("Trihalomethanes", 0.0, 200.0, 40.0)
+    turbidity = st.number_input("Turbidity", 0.0, 10.0, 1.0)
     
     data = {
         "ph": ph,

@@ -13,20 +13,30 @@ st.markdown(
     """
     <style>
     .stApp {
-        background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+        background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+        color: white;
     }
-    .reportview-container .main .block-container{
-        background-color: rgba(255,255,255,0.9);
+
+    .reportview-container .main .block-container {
+        background-color: rgba(0, 0, 0, 0.6);  
         padding: 30px;
         border-radius: 15px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        color: white;  
     }
+
+   
     h1 {
-        color: #00796b;
+        color: #ffffff;
         font-family: 'Arial Black', sans-serif;
     }
     h2, h3 {
-        color: #004d40;
+        color: #f0f0f0;
+    }
+
+    
+    .stMarkdown p {
+        color: white;
     }
     </style>
     """,
@@ -64,7 +74,13 @@ def user_input_features():
         "Trihalomethanes": trihalomethanes,
         "Turbidity": turbidity
     }
-    return pd.DataFrame([data])
+    df = pd.DataFrame([data])
+    df["solids_per_conductivity"] = df["Solids"] / (df["Conductivity"] + 1)
+    df["chloramine_sulfate_ratio"] = df["Chloramines"] / (df["Sulfate"] + 1)
+    df["organic_turbidity"] = df["Organic_carbon"] * df["Turbidity"]
+    df["ph_deviation"] = abs(df["ph"] - 7)
+
+    return df
 
 input_df = user_input_features()
 

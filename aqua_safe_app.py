@@ -88,8 +88,8 @@ input_df = user_input_features()
 st.subheader("Classification Threshold")
 st.markdown("""
 Adjust the threshold to control model sensitivity:
-- **Higher threshold** → more conservative, fewer false positives (predict drinkable less often)
-- **Lower threshold** → more likely to classify water as drinkable
+- **Higher threshold** → More conservative, Fewer false positives (Predict drinkable less often)
+- **Lower threshold** → More likely to classify water as Drinkable
 """)
 best_threshold = st.slider("Threshold", 0.0, 1.0, 0.54, 0.01)
 

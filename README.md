@@ -11,7 +11,7 @@ Access to clean drinking water is essential for health and well-being. This proj
 
 ## 📊 Dataset
 
-- Dataset Source: Kaggle Water Potability dataset - [Water_Potability_Dataset] (https://www.kaggle.com/datasets/adityakadiwal/water-potability)
+- Dataset Source: Kaggle Water Potability dataset - [Water_Potability_Dataset](https://www.kaggle.com/datasets/adityakadiwal/water-potability)
 -  The dataset contains water quality metrics for 3276 different water bodies.
 - Target Variable: `Potability` (0 = Not Drinkable, 1 = Drinkable)  
 - Input Features:
